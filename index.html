@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A JavaScript task list and calculator practice app.">
+  <title>Daylight | Productivity App</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-icon">d</span> daylight <small>PERSONAL TOOLKIT</small></a><span class="today" id="today"></span></header>
+  <main class="layout">
+    <aside class="sidebar"><p class="side-label">YOUR SPACE</p><button class="tab active" data-tab="tasks"><span>☷</span> My tasks <b id="side-count">0</b></button><button class="tab" data-tab="calculator"><span>▦</span> Calculator</button><div class="side-note"><span>✳</span><p><b>One step at a time.</b><br>Make a short list, then focus on what’s next.</p></div><p class="credit">A JavaScript practice project</p></aside>
+    <section class="content">
+      <section class="panel active" id="tasks-panel">
+        <div class="heading"><div><p class="eyebrow">YOUR DAY, MADE CLEARER</p><h1>My tasks</h1><p class="subheading">Keep track of the things you want to get done.</p></div><div class="task-total"><strong id="remaining">0</strong><span>left to do</span></div></div>
+        <form id="task-form" class="new-task"><label class="sr-only" for="task-input">Add a task</label><input id="task-input" type="text" maxlength="100" placeholder="What do you need to do?" required><button type="submit">Add task <span>＋</span></button></form>
+        <div class="toolbar"><div class="filters" aria-label="Filter tasks"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">To do</button><button class="filter" data-filter="done">Completed</button></div><button id="clear-done" class="clear-button">Clear completed</button></div>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <div class="empty" id="empty-state"><span>✓</span><b>You’re all caught up.</b><small>Add a task above to get started.</small></div>
+        <p class="storage-note"><span>●</span> Your tasks are saved in this browser.</p>
+      </section>
+      <section class="panel calculator-panel" id="calculator-panel">
+        <div class="heading"><div><p class="eyebrow">QUICK MATH</p><h1>Calculator</h1><p class="subheading">A simple calculator for everyday arithmetic.</p></div></div>
+        <div class="calculator">
+          <div class="display"><small id="calculation">Ready</small><output id="display" aria-live="polite">0</output></div>
+          <div class="keypad">
+            <button class="key utility" data-action="clear">AC</button><button class="key utility" data-action="sign">+/−</button><button class="key utility" data-action="percent">%</button><button class="key operator" data-op="÷">÷</button>
+            <button class="key" data-digit="7">7</button><button class="key" data-digit="8">8</button><button class="key" data-digit="9">9</button><button class="key operator" data-op="×">×</button>
+            <button class="key" data-digit="4">4</button><button class="key" data-digit="5">5</button><button class="key" data-digit="6">6</button><button class="key operator" data-op="−">−</button>
+            <button class="key" data-digit="1">1</button><button class="key" data-digit="2">2</button><button class="key" data-digit="3">3</button><button class="key operator" data-op="+">+</button>
+            <button class="key zero" data-digit="0">0</button><button class="key" data-action="decimal">.</button><button class="key equals" data-action="equals">=</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
